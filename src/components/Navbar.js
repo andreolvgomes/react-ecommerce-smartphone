@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 //import logo from '../logo.svg'
+import styled from 'styled-components';
+import { ButtonContainer } from './Button';
 
-class Navbar extends Component {
+export default class Navbar extends Component {
     render() {
         return (
             <nav className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
@@ -19,14 +21,16 @@ class Navbar extends Component {
                 </ul>
 
                 <Link to="/cart" className="ml-auto">
-                    <button>
-                        <i className="fa fa-cart-plus"/>
+                    <ButtonContainer>
+                        <span className="mr-2">
+                            <i className="fa fa-cart-plus" />
+                        </span>
                          My Cart
-                    </button>
+                    </ButtonContainer>
                 </Link>
             </nav>
         );
     }
 }
 
-export default Navbar;
+// export default Navbar;
