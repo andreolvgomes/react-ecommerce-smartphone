@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter as Router} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { ProductProvider } from './context'
 
 ReactDOM.render(
   // <React.StrictMode>
@@ -11,9 +12,12 @@ ReactDOM.render(
   // </React.StrictMode>,
 
   // add here new my code
-  <Router>
-    <App />
-  </Router>,
+
+  <ProductProvider>
+    <Router>
+      <App />
+    </Router>
+  </ProductProvider>,
 
   document.getElementById('root')
 );

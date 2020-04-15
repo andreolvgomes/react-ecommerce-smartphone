@@ -7,7 +7,7 @@ import { ButtonContainer } from './Button';
 export default class Navbar extends Component {
     render() {
         return (
-            <nav className="navbar navbar-expand-sm bg-primary navbar-dark px-sm-5">
+            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
                 <Link to='/'>
                     <img src={process.env.PUBLIC_URL + '/logo.svg'} alt="store" className="navbar-brand" />
                 </Link>
@@ -15,7 +15,7 @@ export default class Navbar extends Component {
                 <ul className="navbar-nav aling-items-center">
                     <li className="nav-item ml-5">
                         <Link to="/" className="nav-link">
-                            PRODUCTS
+                            Products
                         </Link>
                     </li>
                 </ul>
@@ -28,9 +28,17 @@ export default class Navbar extends Component {
                          My Cart
                     </ButtonContainer>
                 </Link>
-            </nav>
+            </NavWrapper>
         );
     }
 }
 
 // export default Navbar;
+const NavWrapper = styled.nav`
+ background: var(--mainBlue);
+ .nav-link {
+     color: var(--mainWhite) !important
+     font-size: 1.3rem;
+     text-transform: capitalize !important;
+ }
+`;
